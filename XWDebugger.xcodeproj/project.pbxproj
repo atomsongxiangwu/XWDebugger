@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		791CEA0A1D3C7C980012CC5B /* XWSocketClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 791CEA091D3C7C980012CC5B /* XWSocketClient.m */; };
+		791CEA0D1D3C7D420012CC5B /* XWBasicDataUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 791CEA0C1D3C7D420012CC5B /* XWBasicDataUtility.m */; };
+		791CEA521D3C8B540012CC5B /* XWFileUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 791CEA511D3C8B540012CC5B /* XWFileUploader.m */; };
+		791CEA551D3C8B7F0012CC5B /* XWTerminalLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 791CEA541D3C8B7F0012CC5B /* XWTerminalLogger.m */; };
+		791CEA581D3C8BFA0012CC5B /* XWConsoleLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 791CEA571D3C8BFA0012CC5B /* XWConsoleLogger.m */; };
+		791CEA651D3CD4590012CC5B /* XWUploadPackakge.m in Sources */ = {isa = PBXBuildFile; fileRef = 791CEA641D3CD4590012CC5B /* XWUploadPackakge.m */; };
 		7927E6E81D3C75F6004360FF /* XWDebugger.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7927E6E71D3C75F6004360FF /* XWDebugger.h */; };
 		7927E6EA1D3C75F6004360FF /* XWDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = 7927E6E91D3C75F6004360FF /* XWDebugger.m */; };
+		7956DCE71D40F43000FAF431 /* XWLogInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7956DCE61D40F43000FAF431 /* XWLogInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,9 +32,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		791CEA081D3C7C980012CC5B /* XWSocketClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWSocketClient.h; sourceTree = "<group>"; };
+		791CEA091D3C7C980012CC5B /* XWSocketClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWSocketClient.m; sourceTree = "<group>"; };
+		791CEA0B1D3C7D420012CC5B /* XWBasicDataUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWBasicDataUtility.h; sourceTree = "<group>"; };
+		791CEA0C1D3C7D420012CC5B /* XWBasicDataUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWBasicDataUtility.m; sourceTree = "<group>"; };
+		791CEA501D3C8B540012CC5B /* XWFileUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWFileUploader.h; sourceTree = "<group>"; };
+		791CEA511D3C8B540012CC5B /* XWFileUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWFileUploader.m; sourceTree = "<group>"; };
+		791CEA531D3C8B7F0012CC5B /* XWTerminalLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWTerminalLogger.h; sourceTree = "<group>"; };
+		791CEA541D3C8B7F0012CC5B /* XWTerminalLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWTerminalLogger.m; sourceTree = "<group>"; };
+		791CEA561D3C8BFA0012CC5B /* XWConsoleLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWConsoleLogger.h; sourceTree = "<group>"; };
+		791CEA571D3C8BFA0012CC5B /* XWConsoleLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWConsoleLogger.m; sourceTree = "<group>"; };
+		791CEA631D3CD4590012CC5B /* XWUploadPackakge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWUploadPackakge.h; sourceTree = "<group>"; };
+		791CEA641D3CD4590012CC5B /* XWUploadPackakge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWUploadPackakge.m; sourceTree = "<group>"; };
 		7927E6E41D3C75F6004360FF /* libXWDebugger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXWDebugger.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7927E6E71D3C75F6004360FF /* XWDebugger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWDebugger.h; sourceTree = "<group>"; };
 		7927E6E91D3C75F6004360FF /* XWDebugger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWDebugger.m; sourceTree = "<group>"; };
+		7956DCE51D40F43000FAF431 /* XWLogInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWLogInfo.h; sourceTree = "<group>"; };
+		7956DCE61D40F43000FAF431 /* XWLogInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWLogInfo.m; sourceTree = "<group>"; };
+		7956DCE81D40F5FB00FAF431 /* XWLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWLogger.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +84,21 @@
 			children = (
 				7927E6E71D3C75F6004360FF /* XWDebugger.h */,
 				7927E6E91D3C75F6004360FF /* XWDebugger.m */,
+				791CEA501D3C8B540012CC5B /* XWFileUploader.h */,
+				791CEA511D3C8B540012CC5B /* XWFileUploader.m */,
+				791CEA531D3C8B7F0012CC5B /* XWTerminalLogger.h */,
+				791CEA541D3C8B7F0012CC5B /* XWTerminalLogger.m */,
+				791CEA561D3C8BFA0012CC5B /* XWConsoleLogger.h */,
+				791CEA571D3C8BFA0012CC5B /* XWConsoleLogger.m */,
+				791CEA081D3C7C980012CC5B /* XWSocketClient.h */,
+				791CEA091D3C7C980012CC5B /* XWSocketClient.m */,
+				791CEA0B1D3C7D420012CC5B /* XWBasicDataUtility.h */,
+				791CEA0C1D3C7D420012CC5B /* XWBasicDataUtility.m */,
+				791CEA631D3CD4590012CC5B /* XWUploadPackakge.h */,
+				791CEA641D3CD4590012CC5B /* XWUploadPackakge.m */,
+				7956DCE51D40F43000FAF431 /* XWLogInfo.h */,
+				7956DCE61D40F43000FAF431 /* XWLogInfo.m */,
+				7956DCE81D40F5FB00FAF431 /* XWLogger.h */,
 			);
 			path = XWDebugger;
 			sourceTree = "<group>";
@@ -123,7 +160,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				791CEA581D3C8BFA0012CC5B /* XWConsoleLogger.m in Sources */,
+				791CEA0A1D3C7C980012CC5B /* XWSocketClient.m in Sources */,
+				791CEA651D3CD4590012CC5B /* XWUploadPackakge.m in Sources */,
+				7956DCE71D40F43000FAF431 /* XWLogInfo.m in Sources */,
 				7927E6EA1D3C75F6004360FF /* XWDebugger.m in Sources */,
+				791CEA551D3C8B7F0012CC5B /* XWTerminalLogger.m in Sources */,
+				791CEA521D3C8B540012CC5B /* XWFileUploader.m in Sources */,
+				791CEA0D1D3C7D420012CC5B /* XWBasicDataUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +295,7 @@
 				7927E6EF1D3C75F6004360FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
