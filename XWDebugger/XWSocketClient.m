@@ -198,8 +198,7 @@ static const uint32_t kHeaderLength = 4;
     _runloopTimer = [NSTimer scheduledTimerWithTimeInterval:[[NSDate distantFuture] timeIntervalSinceNow] target:self selector:@selector(_ignore) userInfo:nil repeats:YES];
     NSThread *currentThread = [NSThread currentThread];
     BOOL isCancelled = [currentThread isCancelled];
-    while (!isCancelled) {
-        CFRunLoopRun();
+    while (!isCancelled && [[NSRunLoop currentRunLoop] runMode:NSRunLoopCommonModes beforeDate:[NSDate distantFuture]]) {
         isCancelled = [currentThread isCancelled];
     }
 }

@@ -18,7 +18,8 @@
     dispatch_queue_t _debugQueue;
 }
 
-@property (nonatomic, assign) BOOL enableDebugger;
+@property (nonatomic, assign) BOOL hasEnable;
+@property (nonatomic, assign) BOOL hasConfigAddr;
 @property (nonatomic, strong) XWFileUploader *fileUploader;
 @property (nonatomic, strong) XWTerminalLogger *terminalLogger;
 @property (nonatomic, strong) XWConsoleLogger *consoleLogger;
@@ -49,15 +50,24 @@
         _fileUploader = [[XWFileUploader alloc] init];
         _terminalLogger = [[XWTerminalLogger alloc] init];
         _consoleLogger = [[XWConsoleLogger alloc] init];
+        _hasEnable = NO;
+        _hasConfigAddr = NO;
     }
     return self;
 }
 
 #pragma mark - Public Method
 
+- (void)enableDebugger {
+    dispatch_sync(_debugQueue, ^{
+        _hasEnable = YES;
+    });
+}
+
 - (void)enableDebuggerWithHost:(NSString *)host port:(uint16_t)port {
     dispatch_sync(_debugQueue, ^{
-        _enableDebugger = YES;
+        _hasEnable = YES;
+        _hasConfigAddr = YES;
         [_fileUploader configWithHost:host port:port];
         [_terminalLogger configWithHost:host port:port];
     });
@@ -65,13 +75,20 @@
 
 - (void)disableDebugger {
     dispatch_sync(_debugQueue, ^{
-        _enableDebugger = NO;
+        _hasEnable = NO;
+        _hasConfigAddr = NO;
+    });
+}
+
+- (void)clearHostAndPort {
+    dispatch_sync(_debugQueue, ^{
+        _hasConfigAddr = NO;
     });
 }
 
 - (void)uploadFile:(NSString *)filePath progress:(void (^)(NSInteger finishedSize, NSInteger totalSize))progress success:(void (^)())success fail:(void (^)(NSInteger code, NSString *msg))fail {
     dispatch_async(_debugQueue, ^{
-        if (_enableDebugger) {
+        if (_hasEnable && _hasConfigAddr) {
             [_fileUploader uploadFile:filePath progress:progress success:success fail:fail];
         }
     });
@@ -91,7 +108,7 @@
 
 - (void)_log:(XWLogTarget)target level:(XWLogLevel)level content:(NSString *)content {
     dispatch_sync(_debugQueue, ^{ @autoreleasepool {
-        if (_enableDebugger) {
+        if (_hasEnable) {
             XWLogInfo *info = [[XWLogInfo alloc] initWithContent:content level:level appName:_appName proccessID:_proccessID];
             switch (target) {
                 case XWLogTargetConsole:
@@ -101,13 +118,17 @@
                     break;
                 case XWLogTargetTerminal:
                 {
-                    [_terminalLogger log:info];
+                    if (_hasConfigAddr) {
+                        [_terminalLogger log:info];
+                    }
                 }
                     break;
                 case XWLogTargetAll:
                 {
                     [_consoleLogger log:info];
-                    [_terminalLogger log:info];
+                    if (_hasConfigAddr) {
+                        [_terminalLogger log:info];
+                    }
                 }
                     break;
             }
